@@ -90,13 +90,13 @@ export default function Navbar() {
       </div>
       {menuOpen && userRole !== "admin" && (
         <div ref={menuRef} className="md:hidden absolute top-16 left-0 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-gray-800 dark:via-gray-900 dark:to-black flex flex-col items-center space-y-4 py-4">
-          <NavLink to="/Input" className="block py-2 px-4 rounded hover:bg-hoverButtonColor">
+          <NavLink to="/Input" className="block py-2 px-4 rounded hover:bg-hoverButtonColor" onClick={() => setMenuOpen(false)}>
             Vitals
           </NavLink>
-          <NavLink to="/ChartPage" className="block py-2 px-4 rounded hover:bg-hoverButtonColor">
+          <NavLink to="/ChartPage" className="block py-2 px-4 rounded hover:bg-hoverButtonColor" onClick={() => setMenuOpen(false)}>
             Charts
           </NavLink>
-          <NavLink to="/ReportsPage" className="block py-2 px-4 rounded hover:bg-hoverButtonColor">
+          <NavLink to="/ReportsPage" className="block py-2 px-4 rounded hover:bg-hoverButtonColor" onClick={() => setMenuOpen(false)}>
             Reports
           </NavLink>
         </div>
