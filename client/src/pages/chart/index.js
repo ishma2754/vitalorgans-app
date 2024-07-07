@@ -1,11 +1,10 @@
-import { useContext, useEffect} from "react";
+import { useContext, useEffect } from "react";
 import Chart from "react-apexcharts";
 import { GlobalContext } from "../../context/index";
 
 export default function ChartPage() {
-  const { inputValues, getInputData, deleteInputData} = useContext(GlobalContext);
+  const { inputValues, getInputData, deleteInputData } = useContext(GlobalContext);
 
-  
   useEffect(() => {
     getInputData();
   }, []);
@@ -72,6 +71,7 @@ export default function ChartPage() {
               easing: "easeinout",
               speed: 800,
             },
+            background: "transparent",
           },
           xaxis: {
             categories: seriesData.map((data) => data.x),
@@ -115,18 +115,18 @@ export default function ChartPage() {
             formatter: function (val) {
               return val;
             },
-            tooltip: {
-              theme: "light",
-            },
+          },
+          tooltip: {
+            theme: "light",
           },
         };
 
         return (
           <div
             key={inputValuesItem.id}
-            className="mb-4 border-4 rounded-lg border-underlineHome p-4"
+            className="mb-4 bg-white dark:bg-gray-800 border-4 border-blue-500 dark:border-blue-700 rounded-lg p-4 shadow-lg"
           >
-            <div className="text-center font-semibold mb-2">
+            <div className="text-center font-semibold mb-2 text-gray-900 dark:text-gray-100">
               {inputValuesItem.date}
             </div>
             <Chart
@@ -144,10 +144,10 @@ export default function ChartPage() {
               type="bar"
               height={350}
             />
-             <div className="flex justify-center mt-2">
+            <div className="flex justify-center mt-2">
               <button
-                 onClick={() => deleteInputData(inputValuesItem.id)}
-                className="text-white bg-buttonColor hover:bg-hoverButtonColor focus:ring-4 focus:outline-none focus:ring-RussianViolet font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                onClick={() => deleteInputData(inputValuesItem.id)}
+                className="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-900"
               >
                 Delete
               </button>

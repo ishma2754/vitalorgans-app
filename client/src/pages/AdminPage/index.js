@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./index.css";
 import { useCookies } from "react-cookie";
 import { Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/TextLayer.css";
@@ -115,31 +114,30 @@ export default function AdminFetchUser() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen">
-        <div className="admin-fetch-user mx-4 flex-grow">
-          <h2 className="text-xl font-bold leading-tight tracking-tight text-RussianViolet md:text-2xl mb-5 mt-5">
+      <div className="flex flex-col min-h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-gray-800 dark:via-gray-900 dark:to-black">
+        <div className="admin-fetch-user mx-8 flex-grow">
+          <h2 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl mb-5 mt-5">
             FETCH USER DATA
           </h2>
           <input
             type="email"
             placeholder="Enter user email e.g user@test.com"
-            className="bg-gray-50 border-2 border-underlineHome text-inputTextColor text-sm rounded-lg focus:ring-RussianViolet focus:border-RussianViolet
-            block w-full md:w-1/4 p-2.5 "
+            className="bg-gray-50 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-1/4 p-2.5"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
           />
           <button
-            className="text-white bg-buttonColor hover:bg-hoverButtonColor focus:ring-4 focus:outline-none focus:ring-RussianViolet font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center block mt-4"
+            className="text-white bg-purple-500 hover:bg-purple-600 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mt-4"
             onClick={handleFetch}
           >
             Fetch Data
           </button>
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <p className="text-red-500 mt-4">{error}</p>}
 
           {userData && (
             <div>
-              <div className="max-w-md mx-auto border-4 border-RussianViolet rounded-lg p-4 mt-8">
-                <h2 className="text-lg text-inputTextColor font-bold mb-4">
+              <div className="max-w-md mx-auto bg-white dark:bg-gray-800 border-4 border-blue-500 dark:border-gray-600 rounded-lg p-4 mt-8 shadow-lg">
+                <h2 className="text-lg text-gray-900 dark:text-gray-100 font-bold mb-4">
                   USER DETAILS
                 </h2>
                 <div>
@@ -149,50 +147,50 @@ export default function AdminFetchUser() {
                       className="grid grid-cols-3 gap-4"
                     >
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Name
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userDataItem.name}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome ">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Age
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userDataItem.age}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome ">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Blood Group
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userDataItem.bloodgroup}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Emergency Contact
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userDataItem.emergencycontact}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Gender
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userDataItem.gender}
                         </div>
                       </div>
                       <div className="col-span-3">
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Medical Conditions And Prescriptions
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userDataItem.medicalconditions}
                         </div>
                       </div>
@@ -202,86 +200,86 @@ export default function AdminFetchUser() {
               </div>
 
               {userData.inputValues.length > 0 && (
-                <div className="max-w-md mx-auto border-4 border-RussianViolet rounded-lg p-4 mt-8">
+                <div className="max-w-md mx-auto bg-white dark:bg-gray-800 border-4 border-blue-500 dark:border-gray-600 rounded-lg p-4 mt-8 shadow-lg">
                   <div>
                     <div className="grid grid-cols-3 gap-4">
                       <div className="col-span-3">
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           DATE
                         </div>
-                        <div className="text-inputTextColor font-bold">
+                        <div className="text-gray-900 dark:text-gray-100 font-bold">
                           {userData.inputValues[0].date}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           BP SYS / mmHg
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].bpsys}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           BP DIA / mmHg
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].bpdia}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Pulse Rate beats/min
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].pulserate}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Total Cholesterol mg/dL
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].totalcholesterol}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           HDL Cholesterol mg/dL
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].hdlcholesterol}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           LDL Cholesterol mg/dL
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].ldlcholesterol}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Blood Glucose(F) mg/dL
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].bloodglucosefasting}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Blood Glucose(PP) mg/dL
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].bloodglucosepp}
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold text-underlineHome">
+                        <div className="font-semibold text-gray-500 dark:text-gray-400">
                           Creatinine µmol/l
                         </div>
-                        <div className="text-inputTextColor">
+                        <div className="text-gray-900 dark:text-gray-100">
                           {userData.inputValues[0].creatinine}
                         </div>
                       </div>
@@ -294,10 +292,10 @@ export default function AdminFetchUser() {
                 {userData.pdfData.map((report) => (
                   <div
                     key={report.id}
-                    className="pdf-item relative rounded-lg border-RussianViolet bg-white border-4  shadow"
+                    className="pdf-item relative rounded-lg border-blue-500 dark:border-gray-600 bg-white dark:bg-gray-800 border-4 shadow"
                   >
                     <div className="pdf-details p-5 relative">
-                      <h3 className="font-bold text-underlineHome">
+                      <h3 className="font-bold text-blue-500 dark:text-blue-400">
                         {report.file_name}
                       </h3>
                       <div className="pdf-container relative w-full h-64 overflow-hidden">
@@ -308,7 +306,7 @@ export default function AdminFetchUser() {
                       <div className="mt-2">
                         <a
                           href={report.signedurl}
-                          className="text-white bg-buttonColor hover:bg-hoverButtonColor focus:ring-4 focus:outline-none focus:ring-RussianViolet font-bold rounded-lg text-sm px-5 py-2.5 text-center"
+                          className="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-900"
                           style={{ display: "inline-block" }}
                         >
                           Download PDF
@@ -322,15 +320,15 @@ export default function AdminFetchUser() {
           )}
         </div>
 
-        <footer className="bg-RussianViolet mt-8">
-          <div className="px-4 py-6 bg-RussianViolet md:flex md:items-center md:justify-between">
+        <footer className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-gray-800 dark:via-gray-900 dark:to-black mt-8">
+          <div className="px-4 py-6 md:flex md:items-center md:justify-between">
             <span className="text-sm text-white sm:text-center">
               © 2024 <a href="#">VitalOrgans</a> By ISHMA KHAN
             </span>
             <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
               <a
                 href="mailto:your_ishmakhan1995@gmail.com"
-                className="text-gray-400 hover:text-gray-900"
+                className="text-gray-400 hover:text-white"
               >
                 <svg
                   className="w-6 h-6 text-white hover:text-hoverColor"

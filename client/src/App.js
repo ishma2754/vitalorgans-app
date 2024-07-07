@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import Auth from "./components/Authorisation/Auth";
 import { Navigate } from "react-router-dom";
 import Navbar from "./components/navbar";
@@ -18,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <div className="App">
+       <div className="min-h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-gray-800 dark:via-gray-900 dark:to-black flex flex-col">
         {!authToken && <Auth />}
 
         {authToken && (
