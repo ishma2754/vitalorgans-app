@@ -12,7 +12,7 @@ CREATE TABLE formData (
 );
 
 CREATE TABLE inputValues (
-   id VARCHAR(255) PRIMARY KEY,
+  id VARCHAR(255) PRIMARY KEY,
   user_email VARCHAR(255),
   bpSys INTEGER,
   bpDia INTEGER,
