@@ -5,6 +5,6 @@
   "scripts": {
     "build": "cd client && npm install",
     "server": "node ./server/server.js",
-    "client": "cd client && npm start"
+    "client": "cd client && npm install"
   }
 }
