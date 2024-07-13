@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "install": "npm install && cd client && npm install",
-    "build": "cd client && npm install && npm run build",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
     "server": "node ./server/server.js",
     "client": "cd client && npm install"
   }
